@@ -40,7 +40,11 @@ This is a simple Book Management System web application that allows users to reg
    ```
    npm install
    ```
-4. Start the server:
+4. The database table will be automatically created when you start the server. If you want to initialize it separately, you can run:
+   ```
+   node init-db.js
+   ```
+5. Start the server:
    ```
    node server.js
    ```
@@ -48,7 +52,7 @@ This is a simple Book Management System web application that allows users to reg
    ```
    npm start
    ```
-5. Open your browser and navigate to `http://localhost:3000`
+6. Open your browser and navigate to `http://localhost:3000`
 
 ## Usage
 

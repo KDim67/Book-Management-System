@@ -17,7 +17,21 @@ const db = new sqlite3.Database('./books.sqlite', (err) => {
     if(err) {
         console.error(err.message); // Log error if connection fails
     }
-    console.log('Connected to the books database.') // Log success message
+    console.log('Connected to the books database.'); // Log success message
+    
+    // Create books table if it doesn't exist
+    db.run(`CREATE TABLE IF NOT EXISTS books (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        author TEXT NOT NULL,
+        title TEXT NOT NULL,
+        genre TEXT NOT NULL,
+        price NUMERIC NOT NULL,
+        UNIQUE(author, title)
+    )`, (err) => {
+        if (err) {
+            console.error('Error creating books table:', err.message);
+        }
+    });
 });
 
 // Route to serve the index.html file
