@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Linking the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Linking the external JavaScript file -->
+    <script src="script.js" defer></script>
+    <title>Book Management System</title>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <!-- Blurred container for the entire management system -->
+    <div class="blur-container">
+        <!-- Main heading of the system -->
+        <h1>Book Management System</h1>
+        <!-- Toggle switch to switch between registration and search sections -->
+        <div class="toggle-switch">
+            <input type="checkbox" id="toggle-switch" />
+            <!-- Label for the toggle switch -->
+            <label for="toggle-switch" class="switch-label">
+                <!-- Registration icon -->
+                <img src="register-icon.png" alt="Register Icon" class="toggle-icon">
+                <!-- Slider for the toggle switch -->
+                <span class="switch-slider"></span>
+                <!-- Icon for search -->
+                <img src="search-icon.png" alt="Search Icon" class="toggle-icon">
+            </label>
+        </div>
+        <!-- Container for registration and search forms -->
+        <div class="form-container">
+            <!-- Registration section -->
+            <section id="registration">
+                <!-- Heading for registration section -->
+                <h2>Register a new book</h2>
+                <!-- Form for registering a new book -->
+                <form>
+                    <!-- Input area for author -->
+                    <div class="input-container">
+                        <input placeholder="Author" class="input-field" id="author" type="text">
+                        <label for="author" class="input-label">Author</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <!-- Input area for title -->
+                    <div class="input-container">
+                        <input placeholder="Title" class="input-field" id="title" type="text">
+                        <label for="title" class="input-label">Title</label>
+                        <span class="input-highlight"></span>
+                    </div>
+                    <!-- Dropdown for genre selection -->
+                    <div class="dropdown">
+                        <label for="genre" class="dropdown-label">Genre</label>
+                        <select name="genre" id="genre">
+                            <!-- Options for different genres -->
+                            <option value="science-fiction">Science fiction</option>
+                            <option value="satire">Satire</option>
+                            <option value="drama">Drama</option>
+                            <option value="action-and-adventure">Action and Adventure</option>
+                            <option value="romance">Romance</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="horror">Horror</option>
+                        </select>    
+                    </div>
+                    <!-- Input area for price (only accepts real numbers) -->
+                    <div class="input-container">
+                        <input placeholder="Price" class="input-field" id="price" type="text">
+                        <label for="price" class="input-label">Price</label>
+                        <span class="input-highlight"></span>    
+                    </div>
+                    <!-- Register button -->
+                    <button class="button" id="register-button">Register</button>
+                </form>
+            </section>
+            <!-- Search section -->
+            <section id="search">
+                <!-- Heading for search section -->
+                <h2>Search Books</h2>
+                <!-- Form for search -->
+                <form>
+                    <!-- Input field for search keyword -->
+                    <div class="input-container">
+                        <input placeholder="Enter Keyword" class="input-field" id="search-keyword" type="text">
+                        <label for="search" class="input-label">Search Book</label>
+                        <span class="input-highlight"></span>    
+                    </div>
+                    <!-- Button to submit search -->
+                    <button class="button" id="search-button">Search</button>
+                    <!-- Heading for search results -->
+                    <h2>Search Results</h2>
+                    <!-- Container for displaying search results -->
+                    <div id="books-list" class="books-list-container" style="display: none;">
+                        <div class="books-list"></div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

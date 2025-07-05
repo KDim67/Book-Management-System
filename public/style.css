@@ -1,0 +1,396 @@
+/* Body Style */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('library.jpg');
+    background-attachment: fixed; 
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Styling for title */
+title {
+    font-family: 'Montserrat', sans-serif; 
+    color: #f0f0f0; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+/* Styling for h1 */
+h1 {
+    font-family: 'Montserrat', sans-serif; 
+    color: #f0f0f0; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-align: center; 
+}
+
+/* Styling for h2 */
+h2 {
+    font-family: 'Roboto', sans-serif; 
+    color: #f0f0f0; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px; 
+    text-transform: capitalize; 
+    letter-spacing: 1px; 
+    text-align: center; 
+}
+
+/* Additional global styles for better aesthetics */
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Blur container */
+.blur-container {
+    /* Styling for the main container */
+    width: 500px;
+    height: 800px;
+    box-shadow: 0 0 30px 0 rgba(204, 202, 202, 0.507); 
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.blur-container:before {
+    /* Adding blur effect to the container background */
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .7);
+    filter: blur(20px);
+    margin: -20px;
+}
+
+/* Button style for register and search */
+.button {
+    /* Styling for buttons */
+    display: block;
+    margin: auto;
+    padding: 12px 24px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 19px;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+}
+
+.button:before {
+    /* Adding a pseudo-element for button animation */
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:after {
+    /* Adding another pseudo-element for button animation */
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:hover {
+    /* Styling for button hover state */
+    color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.button:hover:before {
+    /* Changing properties for button hover animation */
+    top: -35%;
+    background-color: #007bff;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+    /* Changing properties for button hover animation */
+    top: -45%;
+    background-color: #007bff;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* Input areas style for register and search */
+.input-container {
+    /* Styling for input container */
+    position: relative;
+    margin: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.input-field {
+    /* Styling for input fields */
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    outline: none;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-label {
+    /* Styling for input labels */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-highlight {
+    /* Styling for input highlights */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus + .input-label {
+    /* Styling for input label when focused */
+    top: -10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.input-field:focus + .input-label + .input-highlight {
+    /* Styling for input highlight when focused */
+    width: 110.5%;
+}
+
+/* Dropdown style for genres */
+.dropdown {
+    /* Styling for dropdown container */    
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: margin-left 0.3s ease-in-out; 
+}
+
+.dropdown-label {
+    /* Styling for dropdown label */    
+    display: inline-block;
+    margin-left: 28px; 
+    position: relative;
+    color: #cfcdcd;
+}
+
+.dropdown select {
+    /* Styling for dropdown select */    
+    padding: 12px 24px;
+    border: 1px solid #cccccc;
+    margin-left: 10px; 
+    border-radius: 6px;
+    font-size: 19px;
+    cursor: pointer;
+    color: black;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover select {
+    /* Styling for dropdown select on hover */
+    color: #ffffff;
+    border: 1px solid #cccccc;
+    background-color: #007bff;
+}
+
+.dropdown:hover .dropdown-label {
+    /* Styling for dropdown label on hover */
+    color: #007bff; 
+}
+
+/* Books list style after search results */
+.books-list-container {
+    /* Styling for container of book list */
+    display: none;
+    max-height: 300px; 
+    overflow-y: auto; 
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+.books-list-container::-webkit-scrollbar {
+    /* Styling for scrollbar track */
+    width: 8px; 
+}
+
+.books-list-container::-webkit-scrollbar-track {
+    /* Styling for scrollbar track */
+    background-color: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+
+.books-list-container::-webkit-scrollbar-thumb {
+    /* Styling for scrollbar thumb */
+    background-color: #888; 
+    border-radius: 10px; 
+}
+
+
+.books-list-container::-webkit-scrollbar-thumb:hover {
+    /* Styling for scrollbar thumb on hover */
+    background-color: #555; 
+}
+
+
+.books-list {
+    /* Styling for book list */
+    padding: 10px;
+}
+
+.book-item {
+    /* Styling for individual book item */
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.book-item:hover {
+    /* Styling for individual book item on hover */
+    background-color: #eaeaea;
+}
+
+.book-details {
+    /* Styling for book details */
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.book-details span {
+    /* Styling for spans inside book details */
+    font-weight: bold;
+    color: #007bff;
+}
+
+.no-books-found {
+    /* Styling for no books found message */
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #555;
+    text-align: center;
+}
+
+
+/* Toggle switch style */
+.toggle-switch {
+    /* Styling for toggle switch container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.toggle-switch .switch-label {
+    /* Styling for toggle switch label */
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100px; 
+    height: 50px; 
+    background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch .switch-label .toggle-icon {
+    /* Styling for toggle icons */
+    width: 24px;
+    height: 24px;
+    margin: 0 13px;
+}
+
+.toggle-switch .switch-label .switch-slider {
+    /* Styling for switch slider */
+    position: absolute;
+    width: 50px; 
+    height: 50px; 
+    background-color: #0160c5;
+    border-radius: 50%;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .switch-label .switch-slider {
+    /* Styling for switch slider when checked */
+    transform: translateX(50px); 
+}
+
+.toggle-switch input[type="checkbox"] {
+    /* Hiding the actual checkbox */
+    display: none;
+}
+
+/* Hiders for registration or search depending on the toggle-switch */
+#registration, #search {
+    /* Styling for hiding registration and search sections by default */
+    display: none;
+}
+
+#registration.active, #search.active {
+    /* Styling for displaying active section */
+    display: block;
+}
